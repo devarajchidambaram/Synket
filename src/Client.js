@@ -17,11 +17,6 @@ class Operations {
 				//On the first try, start the server
 				//Then keep trying to connect until it's up
 				if (tries == 0) {
-					//start the server process in the background
-
-					var p = ['node', __dirname + '/Server.js', JSON.stringify(sockdef), module];
-
-					console.log(p.join(' '));
 					spawn('node', [__dirname + '/Server.js', JSON.stringify(sockdef), module], {
 						detached: true
 					}).unref();
