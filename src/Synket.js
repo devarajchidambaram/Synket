@@ -6,8 +6,7 @@ module.exports = class {
 	}
 
 	startServer(module) {
-		var module = process.cwd() + '/' + module;
-		var result = childProcess.spawnSync('node', [__dirname + '/Client.js', 'start', JSON.stringify({args: [this.socket, module]})	]);
+		return childProcess.spawnSync('node', [__dirname + '/Client.js', 'start', JSON.stringify({args: [this.socket, module]})	]);
 	}
 
 	send(data, args) {
