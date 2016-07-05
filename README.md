@@ -52,7 +52,7 @@ Now the client:
 
 
 ```js
-const Synket = require('../../src/Synket.js');
+const Synket = require('synket');
 
 //start the socket
 var connection = new Synket({path: './test.sock'});
@@ -122,3 +122,13 @@ console.log(result);
 ```
 
 This will print `doSomething called with foo and bar`.
+
+
+
+FAQ
+===
+
+**Does blocking cause a large overhead?**
+
+In short, no. Synket does not use a `while` loop to block. The execution of the client thread is paused until a message back from the server is received. This is not much different to leaving the thread waiting asynchronously for a response. Synket does have to launch a third node process to act as a middle-man which will add a small overhead, however this overhead is negligible as it runs a 20 line js file in another process.
+
