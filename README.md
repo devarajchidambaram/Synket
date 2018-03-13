@@ -42,7 +42,7 @@ var server = net.createServer(function(sock) {
 /*
 //Alternatively listen on a URL and port:
 
-}).listen({url: 'http://example.org', port: 4564});
+}).listen({host: 'http://example.org', port: 4564});
 
 */
 
